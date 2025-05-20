@@ -1,15 +1,15 @@
-const snps = document.querySelector('.sinopse');
-const btn = document.querySelector('.btn');
-const btnClose = document.querySelector('.btnclose');
+document.addEventListener('DOMContentLoaded', () => {
+    const sinopse = document.querySelector('.sinopse');
+    const btnOpen = document.querySelector('.btn');
+    const btnClose = document.querySelector('.btnclose');
 
-function abrirSinopse(){
-    btn.addEventListener('click', () => {
-        snps.style.display = 'flex';
-    })
-}
+    if (btnOpen && btnClose && sinopse) {
+        btnOpen.addEventListener('click', () => {
+            sinopse.classList.add('active');
+        });
 
-function fecharSinopse(){
-    btnClose.addEventListener('click', () =>{
-        snps.style.display = 'none'
-    })
-}
+        btnClose.addEventListener('click', () => {
+            sinopse.classList.remove('active');
+        });
+    }
+});
